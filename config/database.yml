@@ -5,7 +5,7 @@ default: &default
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
   username: root
   password: password
-  host: db
+  # host: db
 
 development:
   <<: *default
@@ -17,7 +17,7 @@ test:
 
 production:
   <<: *default
-  url: <%= ENV["DATABASE_URL"] %>
+  # url: <%= ENV["DATABASE_URL"] %>
   adapter: mysql2
   database: <%= ENV.fetch("DB_NAME") %>
   username: <%= ENV.fetch("DB_USER") %>
@@ -25,3 +25,4 @@ production:
   password: <%= ENV.fetch("DB_PASS") %>
   ssl_mode: verify_identity
   sslca: <%= ENV.fetch("MYSQL_ATTR_SSL_CA") %>
+  secret_key_base: <%= ENV["SECRET_KEY_BASE"] %>
