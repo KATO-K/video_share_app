@@ -17,4 +17,10 @@ test:
 
 production:
   <<: *default
-  url: <%= (ENV.fetch("JAWSDB_URL") { "mysql://test:test@test.com:3306/test" }).gsub(/mysql/, 'mysql2') %>
+  adapter: mysql2
+  database: <%= ENV.fetch("DB_NAME") %>
+  username: <%= ENV.fetch("DB_USER") %>
+  host: <%= ENV.fetch("DB_HOST") %>
+  password: <%= ENV.fetch("DB_PASS") %>
+  ssl_mode: verify_identity
+  sslca: <%= ENV.fetch("sslca") %>
