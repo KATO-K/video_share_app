@@ -12,8 +12,8 @@ class CreateVideos < ActiveRecord::Migration[6.1]
       t.string :data_url, null: false
       t.boolean :is_valid, default:true, null:false
 
-      t.references :organization, null: false, foreign_key: true
-      t.references :user, foreign_key: true
+      t.references :organization, null: false#, foreign_key: true
+      t.references :user#, foreign_key: true
 
       t.timestamps
     end
