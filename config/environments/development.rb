@@ -11,7 +11,6 @@ Rails.application.configure do
   config.cache_classes = false
 
   config.hosts.clear
-  config.hosts << "video-app-share.onrender.com"
 
   # Do not eager load code on boot.
   config.eager_load = false
